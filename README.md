@@ -1,0 +1,1 @@
+Upload system is an application for sharing files between users. It includes a registration system, which is protected from SQL Injections and users' passwords are stored in the database, after they have been encrypted with the md5 method.
