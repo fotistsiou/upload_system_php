@@ -82,3 +82,16 @@ body {
 .logout {
     color: rgba(155, 22, 22, 0.747);
 }
+
+footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 30px;
+    color: #456268;
+    background-color: #fcf8ec;
+    box-shadow: 0 0 10px #456268;
+    text-align: center;
+    margin: 0 auto;
+    padding: auto;
+}

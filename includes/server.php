@@ -1,11 +1,9 @@
 <?php
-    session_start();
+    include_once 'database.php';
 
     $username = "";
     $email = "";
     $errors = [];
-
-    $db = mysqli_connect('localhost', 'root', '', 'upload_system');
 
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -76,17 +74,19 @@
     }
 
     if (isset($_POST['upload'])) {
-        $destination = 'uploads/';
+        session_start();
+        $destination = '../uploads/';
         $upload = $_FILES['file']['name'];
         if ( !$upload == "") {
-            $sql = "INSERT INTO uploads (user_id, upload) VALUES ('".$_SESSION['user_id']."', '$upload')";
+            $user_id = $_SESSION["user_id"];
+            $sql = "INSERT INTO uploads (user_id, upload) VALUES ('$user_id', '$upload')";
             mysqli_query($db, $sql);
             $destination .= $_FILES['file']['name'];
             $filename = $_FILES['file']['tmp_name'];
             move_uploaded_file ($filename, $destination);
-            header('Location: index.php');
+            header('Location: ../index.php');
         } else {
-            header('Location: index.php');
+            header('Location: ../index.php');
         }
     }
 

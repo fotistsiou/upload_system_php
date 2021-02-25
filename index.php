@@ -1,6 +1,5 @@
 <?php 
-    include('server.php'); 
-    include('header.php');
+    include_once 'includes/header.php';
 ?>
 
     <div class="header">
@@ -15,7 +14,7 @@
             <p>Welcome <strong><?= $_SESSION['username'] ?></strong></p>
             <div class="">
                 <h3>Υποβολή Φόρμας</h3>
-                <form action="server.php" enctype="multipart/form-data" method="post">
+                <form action="includes/server.php" enctype="multipart/form-data" method="post">
                     <label for="file">Upload your file:</label>
                     <br/>
                     <input type="file" name="file">
@@ -44,4 +43,4 @@
         
     </div>
 
-<?php include('footer.php'); ?>
+<?php include_once 'includes/footer.php'; ?>

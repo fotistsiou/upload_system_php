@@ -1,6 +1,5 @@
 <?php 
-    include('server.php'); 
-    include('header.php');
+    include_once 'includes/header.php';
 ?>
 
     <div class="header">
@@ -8,7 +7,7 @@
     </div>
 
     <form class="gener" action="register.php" method="post">
-        <?php include('errors.php'); ?>
+        <?php include_once 'includes/errors.php'; ?>
         <div class="input-group">
             <label>Username</label>
             <input type="text" name="username" value="<?= $username ?>">
@@ -33,4 +32,4 @@
         </p>
     </form>
 
-<?php include('footer.php'); ?>
+<?php include_once 'includes/footer.php'; ?>
